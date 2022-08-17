@@ -11,7 +11,9 @@ import { AlertViewComponent } from './alert-view/alert-view.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { TabComponent } from './tab/tab.component';
 import { SimpleAlertViewComponent } from './simple-alert-view/simple-alert-view.component';
-
+import { TimerService } from './timer/timer.service';
+import { TimerNativeComponent } from './timer-native/timer.component';
+import { TimerNoneComponent } from './timer-none/timer.component';
 
 
 @NgModule({
@@ -23,14 +25,16 @@ import { SimpleAlertViewComponent } from './simple-alert-view/simple-alert-view.
     AlertViewComponent,
     TabsComponent,
     TabComponent,
-    SimpleAlertViewComponent
+    SimpleAlertViewComponent,
+    TimerNativeComponent,
+    TimerNoneComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [TimerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
