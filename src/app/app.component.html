@@ -2,14 +2,20 @@
 
   <app-tabs>
     
-    <app-tab title="Timers"></app-tab>
-    <app-tab title="Crono"></app-tab>
-    <app-tab title="Alarm"></app-tab>
+    <app-tab title="Timers">
+      <app-timer *ngFor="let timer of timers"  init="{{timer}}" (onComplete)="showEndTimerAlert()"></app-timer>
+      <button class="add" (click)="showAddTimer()">+</button>
+    </app-tab>
+    <app-tab title="Crono">
+      Crono. Not aviable
+    </app-tab>
+    <app-tab title="Alarm">
+      Alarm. Not aviable
+    </app-tab>
 
   </app-tabs>
 
-  <app-timer *ngFor="let timer of timers"  init="{{timer}}" (onComplete)="showEndTimerAlert()"></app-timer>
-  <button class="add" (click)="showAddTimer()">+</button>
+  
 
   <app-alert-view [hidden]="!isAddTimerVisible">
     <div header>Add timer form content</div>
@@ -26,5 +32,5 @@
     </div>
     <button (click)="hideEndTimerAlert()">Ok</button>
   </app-alert-view>
-
+  <app-simple-alert-view></app-simple-alert-view>
 </div>
